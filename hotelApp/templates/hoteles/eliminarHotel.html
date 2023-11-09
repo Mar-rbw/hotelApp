@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eliminar Hoteles/title>
+</head>
+<body>
+    <h1>Eliminar Hotel</h1>
+    <p> Estas seguro que desea eliminar el hotel "{{ hotel.nombreHotel}}"?</p>
+    <form method="POST">
+        {% csrf_token %}
+        <button type="submit">Eliminar</button>
+    </form>
+</body>
+</html>

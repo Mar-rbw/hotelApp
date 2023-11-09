@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de hoteles</title>
+</head>
+<body>
+    <h1>Listado de hoteles</h1>
+    <div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nombre del Hotel: </th>
+                    <th>Direccion del Hotel: </th>
+                    <th>Habitaciones: </th>
+                    <th>Tarifa: </th>
+                    <th>Telefono Hotel: </th>
+                    <th>Mascota: </th>
+                    <th>Numero: </th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for hotel in hoteles %}
+                <tr>
+                    <td>{{ hotel.nombreHotel }}</td>
+                    <td>{{ hotel.direccionHotel }}</td>
+                    <td>{{ hotel.habitacionHotel }}</td>
+                    <td>{{ hotel.tarifaHotel }}</td>
+                    <td>{{ hotel.telefonoHotel }}</td>
+                    <td>{{ hotel.mascotaHotel }}</td>
+                    <td>{{ hotel.numeroHotel }}</td>
+                    <td>
+                        <a href="{% url 'editarHotel' hotel.id %}">Editar</a>
+                        <a href="{% url 'eliminarHotel' hotel.id%}">Eliminar</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <a href="{% url 'crearHotel' %}">Crear nuevo Hotel</a>
+    </div>
+</body>
+</html>

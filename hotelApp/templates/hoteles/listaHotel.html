@@ -1,14 +1,15 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lista de hoteles</title>
 </head>
-<body>
-    <h1>Listado de hoteles</h1>
-    <div>
-        <table>
+<body class="container mt-5">
+    
+    <div class="alert alert-success display-1">Listado de hoteles</div>
+        <table class="table">
             <thead>
                 <tr>
                     <th>Nombre del Hotel: </th>
@@ -39,7 +40,8 @@
                 {% endfor %}
             </tbody>
         </table>
+       
         <a href="{% url 'crearHotel' %}">Crear nuevo Hotel</a>
-    </div>
+    
 </body>
 </html>

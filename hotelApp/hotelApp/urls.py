@@ -20,8 +20,8 @@ from hoteles import views
 
 
 urlpatterns = [
-    path('hoteles/', views.listaHotel, name='listaHotel'),
-    path('hoteles/crear/', views.crearHotel, name='crearHotel'),
-    path('hoteles/editar/<int:id>/', views.editarHotel, name='editarHotel'),
-    path('hoteles/eliminar/<int:id>/', views.eliminarHotel, name='eliminarHotel'),
+    path('', views.listaHotel, name='listaHotel'),
+    path('crea', views.crearHotel, name='crearHotel'),
+    path('editar/<int:id>/', views.editarHotel, name='editarHotel'),
+    path('eliminar/<int:id>/', views.eliminarHotel, name='eliminarHotel'),
 ]

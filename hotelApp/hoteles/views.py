@@ -12,19 +12,19 @@ def crearHotel(request):
     if form.is_valid():
         form.save()
         return redirect('listaHotel')
-    return render(request, 'crearHotel.html', {'form':form})
+    return render(request, 'hoteles/crearHotel.html', {'form':form})
 
 def editarHotel(request, id):
     hotel = Hotel.objects.get(id=id)
-    form = HotelForm(request.Post or None)
+    form = HotelForm(request.POST or None)
     if form.is_valid():
         form.save()
         return redirect('listaHotel')
-    return render(request, 'editarHotel.html',{'form':form, 'hotel':hotel})
+    return render(request, 'hoteles/editarHotel.html',{'form':form, 'hotel':hotel})
 
 def eliminarHotel(request,id):
     hotel = Hotel.objects.get(id=id)
     if request.method == 'POST':
         hotel.delete()
         return redirect('listaHotel')
-    return render(request, 'eliminarHotel.html',{'hotel':hotel} )
+    return render(request, 'hoteles/eliminarHotel.html',{'hotel':hotel} )

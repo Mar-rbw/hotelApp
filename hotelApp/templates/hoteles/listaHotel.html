@@ -4,21 +4,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+
     <title>Lista de hoteles</title>
 </head>
 <body class="container mt-5">
     
     <div class="alert alert-success display-1">Listado de hoteles</div>
-        <table class="table">
+        <table class="table-bordered">
             <thead>
                 <tr>
-                    <th>Nombre del Hotel: </th>
-                    <th>Direccion del Hotel: </th>
-                    <th>Habitaciones: </th>
-                    <th>Tarifa: </th>
-                    <th>Telefono Hotel: </th>
-                    <th>Mascota: </th>
-                    <th>Numero: </th>
+                    <th>Nombre del Hotel </th>
+                    <th>Direccion del Hotel </th>
+                    <th>Habitaciones </th>
+                    <th>Tarifa </th>
+                    <th>Telefono Hotel </th>
+                    <th>Mascota </th>
+                    <th>Numero </th>
                     <th>Acciones</th>
                 </tr>
             </thead>
@@ -33,15 +36,15 @@
                     <td>{{ hotel.mascotaHotel }}</td>
                     <td>{{ hotel.numeroHotel }}</td>
                     <td>
-                        <a href="{% url 'editarHotel' hotel.id %}">Editar</a>
-                        <a href="{% url 'eliminarHotel' hotel.id%}">Eliminar</a>
+                        <a href="{% url 'editarHotel' hotel.id %}" class="btn btn-primary">Editar</a>
+                        <a href="{% url 'eliminarHotel' hotel.id %}" class="btn btn-danger">Eliminar</a>
                     </td>
                 </tr>
                 {% endfor %}
             </tbody>
         </table>
        
-        <a href="{% url 'crearHotel' %}">Crear nuevo Hotel</a>
+        <a href="{% url 'crearHotel' %}" class="btn btn-warning">Crear nuevo Hotel</a>
     
 </body>
 </html>

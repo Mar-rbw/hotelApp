@@ -17,6 +17,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from hoteles import views
+from clientApp import views
 
 
 urlpatterns = [
@@ -25,4 +26,8 @@ urlpatterns = [
     path('creaHotel', views.crearHotel, name='crearHotel'),
     path('editarHotel/<int:id>/', views.editarHotel, name='editarHotel'),
     path('eliminarHotel/<int:id>/', views.eliminarHotel, name='eliminarHotel'),
+    path('listaClient', views.listaClient, name='listaClient'),
+    path('crearClient', views.crearClient, name='crearClient'),
+    path('editarClient/<int:id>/', views.editarClient, name='editarClient'),
+    path('eliminarClient/<int:id>/',views.eliminarClient, name='eliminarClient'),
 ]

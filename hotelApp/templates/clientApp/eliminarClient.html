@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eliminar Pasajeros</title>
+</head>
+<body>
+    <h1>Eliminar Pasajeros</h1>
+    <p> Estas Seguro que desea eliminar al Pasajeros "{{ client.nombreClient}}?" </p>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit" class="btn-danger">Eliminar Pasajeros</button>
+    </form>
+</body>
+</html>

@@ -7,22 +7,65 @@
     <title>listado de Pasajeros</title>
 </head>
 <body class="container mt-5">
-
+    <div>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="#">Navbar</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="{% url 'hoteles:listaHotel' %}">Home Lista Hotel</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="{% url 'clientApp : listaClient ' %}">Listado pasajeros</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="{% url 'clientApp : editarClient' %}">Editor de pasajeros</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link disabled" href="{% url 'hoteles : editarHotel' %}" tabindex="-1" aria-disabled="true">Editor de hoteles</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+    </div>
+    
     <div class="alert alert-success display-1">Listado de Pasajero
         <table class="table-bordered">
             <thead>
                 <tr>
-                    <th></th>
-                    <th></th>
-                    <th></th>
-                    <th></th>
-                    <th></th>
-                    <th></th>
+                    <th>Rut Pasajero </th>
+                    <th>Nombre Pasajero </th>
+                    <th>Apellido Pasajero </th>
+                    <th>Fono Pasajero </th>
+                    <th>Llegada Pasajero </th>
+                    <th>Salida Pasajero </th>
+                    <th>Acciones</th>
                 </tr>
             </thead>
+            <tbody>
+                {% for client in clientes %}
+                <tr>
+                    <td>{{ client.rutClient }}</td>
+                    <td>{{ client.nombreClient }}</td>
+                    <td>{{ client.apellidoClient }}</td>
+                    <td>{{ client.fonoClient }}</td>
+                    <td>{{ client.llegadaClient }}</td>
+                    <td>{{ client.salidaClient }}</td>
+                    <td>
+                        <a href="{% url 'editarClient' client.id %}" class="btn btn-primary">Editar</a>
+                        <a href="{% url 'eliminarClient' client.id %}" class="btn btn-danger">Eliminar</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
         </table>
 
-
+        <a href="{% url 'crearClient' %}" class="btn btn-warning">Crear nuevo Pasajero</a>
     </div>
 
 </body>

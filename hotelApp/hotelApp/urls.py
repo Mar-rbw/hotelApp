@@ -18,6 +18,7 @@ from django.contrib import admin
 from django.urls import path
 from hoteles import views
 from clientApp import views
+from habitacionApp import views
 
 
 urlpatterns = [
@@ -29,5 +30,6 @@ urlpatterns = [
     path('listaClient', views.listaClient, name='listaClient'),
     path('crearClient', views.crearClient, name='crearClient'),
     path('editarClient/<int:id>/', views.editarClient, name='editarClient'),
-    path('eliminarClient/<int:id>/',views.eliminarClient, name='eliminarClient'),
+    path('eliminarClient/<int:id>/', views.eliminarClient, name='eliminarClient'),
+    path('habitacion', views.prueba, name='habitacionApp')
 ]
